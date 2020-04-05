@@ -10,10 +10,19 @@ class App extends Component
     constructor(){
         super()
         this.state={
-        robots:robots,
+        robots:[],
         searchfield:''}
 
 
+    }
+        componentDidMount(){
+        fetch('https://jsonplaceholder.typicode.com/users')
+        .then(response =>{
+            return response.json();
+        })
+        .then(users =>{
+            this.setState({robots:users})
+        } );
     }
     onsearchchnage=(event)=>{
        this.setState({searchfield: event.target.value});
@@ -28,7 +37,7 @@ class App extends Component
     return (
         <div className='pa6'>
         
-        <h1 className=' i tc underline'>Robo Friends</h1>
+        <h1 className='i  tc underline'>Robo Friends</h1>
          < Searchbox searchchange={this.onsearchchnage}/>
         <CardList  robots={filterrobot}/>
         </div>

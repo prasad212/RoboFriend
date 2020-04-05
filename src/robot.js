@@ -1,12 +1,12 @@
 export const robots=[{
     id:1,
-    name:"prasad",
+    name:"Prasad Mandge",
     username:'p212',
     email:'a@gmail.com'
 },
 {
     id:2,
-    name:"abc",
+    name:"",
     username:'p212',
     email:'pavi@gmail.com'
 },
